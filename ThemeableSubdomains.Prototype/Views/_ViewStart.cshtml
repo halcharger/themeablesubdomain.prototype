@@ -1,3 +1,6 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    var themeLayoutFile = Session["ThemeLayoutFile"] as string ?? string.Empty;
+    Layout = (string.IsNullOrEmpty(themeLayoutFile) || !File.Exists(themeLayoutFile)) 
+                ? "~/Views/Shared/_Layout.cshtml" 
+                : themeLayoutFile;
 }
