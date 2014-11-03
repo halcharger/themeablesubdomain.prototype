@@ -19,7 +19,7 @@ namespace ThemeableSubdomains.Prototype.Controllers
                 var nodes = host.ToLower().Split('.').ToList();
                 if (nodes.Contains("www")) nodes.Remove("www");
 
-                ViewBag.Subdomain = nodes.Count > 1 ? nodes[1] : "no sub domain";
+                ViewBag.Subdomain = nodes.Count > 1 ? nodes[0] : "no sub domain";
 
             }
 
