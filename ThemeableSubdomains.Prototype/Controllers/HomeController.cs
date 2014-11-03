@@ -21,7 +21,6 @@ namespace ThemeableSubdomains.Prototype.Controllers
 
                 ViewBag.Subdomain = nodes.Count > 1 ? nodes[0] : "no sub domain";
                 Session["ThemeLayoutFile"] = string.Format("~/Views/Shared/Themes/{0}/_Layout.cshtml", ViewBag.Subdomain);
-
             }
 
             return View();
