@@ -10,6 +10,19 @@ namespace ThemeableSubdomains.Prototype.Controllers
     {
         public ActionResult Index()
         {
+            var url = Request.Url;
+            if (url.HostNameType == UriHostNameType.Dns)
+            {
+
+                string host = url.Host;
+
+                var nodes = host.ToLower().Split('.').ToList();
+                if (nodes.Contains("www")) nodes.Remove("www");
+
+                ViewBag.Subdomain = nodes.Count > 1 ? nodes[1] : "no sub domain";
+
+            }
+
             return View();
         }
 
